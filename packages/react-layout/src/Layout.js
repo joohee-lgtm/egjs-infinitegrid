@@ -79,7 +79,7 @@ export default class Layout extends Component {
 			if (!(p in rect)) {
 				return;
 			}
-			if (percentage && ((horizontal && p === "top") || 
+			if (percentage && ((horizontal && p === "top") ||
 			(!horizontal && p === "left"))) {
 				style.push(`${p}:${rect[p] / size * 100}%;`);
 			} else {
@@ -117,7 +117,7 @@ export default class Layout extends Component {
 		const item = new Item(element);
 
 		this._render(item);
-		this.state.render = NOT_RENDER;		
+		this.state.render = NOT_RENDER;
 		return item;
 	}
 	_searchItem(element) {
@@ -212,7 +212,7 @@ export default class Layout extends Component {
 					target,
 					element: item.el,
 					item,
-					itemIndex,	
+					itemIndex,
 				});
 			},
         });
@@ -293,8 +293,8 @@ export default class Layout extends Component {
 		if (!datas) {
 			return;
 		}
-		for (const item in datas) {
-			item.el = null;
+		for (const id in datas) {
+			datas[id].el = null;
 		}
 	}
 }
